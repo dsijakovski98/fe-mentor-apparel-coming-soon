@@ -47,3 +47,17 @@ h6 {
 .attribution a {
 	color: hsl(228, 45%, 44%);
 }
+
+:root {
+	--primary-red: hsl(0, 36%, 70%);
+	--secondary-red: hsl(0, 93%, 68%);
+
+	--neutral-red: hsl(0, 6%, 24%);
+
+	--primary-gradient: linear-gradient(135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%));
+	--secondary-gradient: linear-gradient(135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%));
+}
+
+@media screen and (max-width: 375px) {
+	/* Mobile design */
+}
