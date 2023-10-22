@@ -179,6 +179,8 @@ main {
 	.hero .content,
 	.hero .background {
 		grid-row: 3 / 4;
+
+		text-align: center;
 	}
 
 	.hero .apparel-img {
