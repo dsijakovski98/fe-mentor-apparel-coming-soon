@@ -156,5 +156,10 @@ main {
 
 	.hero .apparel-img {
 		grid-row: 2 / 3;
+		width: 100%;
+	}
+
+	.hero .apparel-img img {
+		width: 100%;
 	}
 }
