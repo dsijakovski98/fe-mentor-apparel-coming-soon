@@ -12,6 +12,8 @@
 body {
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
+
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 img,
@@ -21,6 +23,7 @@ canvas,
 svg {
 	display: block;
 	max-width: 100%;
+	object-fit: cover;
 }
 
 input,
@@ -40,14 +43,6 @@ h6 {
 	overflow-wrap: break-word;
 }
 
-.attribution {
-	font-size: 12px;
-	text-align: center;
-}
-.attribution a {
-	color: hsl(228, 45%, 44%);
-}
-
 :root {
 	--primary-red: hsl(0, 36%, 70%);
 	--secondary-red: hsl(0, 93%, 68%);
@@ -56,8 +51,110 @@ h6 {
 
 	--primary-gradient: linear-gradient(135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%));
 	--secondary-gradient: linear-gradient(135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%));
+
+	--footer-height: 3rem;
 }
 
-@media screen and (max-width: 375px) {
-	/* Mobile design */
+.attribution {
+	font-size: 14px;
+	text-align: center;
+
+	padding-block: 1rem;
+}
+.attribution a {
+	color: var(--primary-red);
+}
+
+body {
+	display: grid;
+	grid-template-rows: 1fr auto;
+
+	min-height: 100dvh;
+}
+
+main {
+	display: grid;
+	place-items: center;
+}
+
+.hero {
+	width: 90%;
+	max-width: 1100px;
+	height: 80dvh;
+
+	margin-inline: 2rem;
+
+	display: grid;
+	grid-template-rows: auto 1fr;
+	grid-template-columns: 1fr auto;
+
+	box-shadow: 0px 8px 1em rgb(0, 0, 0, 0.2);
+
+	isolation: isolate;
+}
+
+.hero .background {
+	grid-row: 1 / -1;
+	grid-column: 1 / 2;
+
+	background-image: url(/images/bg-pattern-desktop.svg);
+	background-position: right;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	z-index: -1;
+}
+
+.hero :is(.logo, .content) {
+	padding-inline: 6rem;
+}
+
+.hero .logo {
+	grid-row: 1 / 2;
+	grid-column: 1 / 2;
+
+	padding-block: 2rem;
+	background-color: transparent;
+}
+
+.hero .content {
+	grid-row: 2 / -1;
+	grid-column: 1 / 2;
+
+	padding-block: 2rem;
+}
+
+.hero .apparel-img {
+	grid-row: 1 / -1;
+	grid-column: 2 / -1;
+	height: inherit;
+}
+
+.hero .apparel-img * {
+	height: inherit;
+}
+
+@media screen and (max-width: 875px) {
+	.hero {
+		height: auto;
+		grid-template-rows: auto auto 1fr;
+		grid-template-columns: 1fr;
+	}
+
+	.hero > * {
+		grid-column: 1 / -1 !important;
+	}
+
+	.hero .logo {
+		grid-row: 1 / 2;
+	}
+
+	.hero .content,
+	.hero .background {
+		grid-row: 3 / 4;
+	}
+
+	.hero .apparel-img {
+		grid-row: 2 / 3;
+	}
 }
