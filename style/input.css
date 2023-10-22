@@ -1,0 +1,56 @@
+:root {
+	--primary-red: hsl(0, 36%, 70%);
+	--secondary-red: hsl(0, 93%, 68%);
+
+	--neutral-red: hsl(0, 6%, 24%);
+
+	--primary-gradient: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	--secondary-gradient: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+.input-field {
+	--btn-width: 90px;
+	--border-radius: 100vh;
+
+	margin-top: 1rem;
+	display: grid;
+	grid-template-columns: 1fr var(--btn-width);
+}
+
+.input-field > * {
+	border: 1px solid var(--primary-red);
+	border-radius: var(--border-radius);
+}
+
+input {
+	grid-row: 1;
+	grid-column: 1 / -1;
+
+	--base-padding: 1rem;
+	padding-left: var(--base-padding);
+	padding-right: calc(var(--btn-width) + var(--base-padding));
+}
+
+input::-webkit-input-placeholder {
+	color: var(--primary-red);
+}
+
+button {
+	grid-row: 1;
+	grid-column: 2 / -1;
+
+	display: grid;
+	place-items: center;
+
+	background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+	box-shadow: 0 12px 1.5em hsl(0, 80%, 86%);
+
+	padding: 0.8rem;
+
+	cursor: pointer;
+	transition: box-shadow 250ms;
+}
+
+button:hover {
+	box-shadow: 0 12px 1.5em hsl(0, 74%, 74%);
+}

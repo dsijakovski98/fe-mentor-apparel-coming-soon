@@ -106,14 +106,14 @@ main {
 }
 
 .hero :is(.logo, .content) {
-	padding-inline: 6rem;
+	padding-inline: 8rem;
 }
 
 .hero .logo {
 	grid-row: 1 / 2;
 	grid-column: 1 / 2;
 
-	padding-block: 2rem;
+	padding-top: 3rem;
 	background-color: transparent;
 }
 
@@ -121,7 +121,30 @@ main {
 	grid-row: 2 / -1;
 	grid-column: 1 / 2;
 
-	padding-block: 2rem;
+	padding-top: 5rem;
+}
+
+.hero .content h1 {
+	width: min-content;
+	text-transform: uppercase;
+	font-size: 50px;
+
+	line-height: 1.2;
+	letter-spacing: 16px;
+
+	color: var(--neutral-red);
+}
+
+.hero .content span {
+	color: var(--primary-red);
+	font-weight: 300;
+}
+
+.hero .content p {
+	color: var(--primary-red);
+	font-size: 14px;
+	font-weight: 600;
+	padding-block: 1rem;
 }
 
 .hero .apparel-img {
@@ -134,7 +157,7 @@ main {
 	height: inherit;
 }
 
-@media screen and (max-width: 875px) {
+@media screen and (max-width: 975px) {
 	.hero {
 		height: auto;
 		grid-template-rows: auto auto 1fr;
@@ -143,6 +166,10 @@ main {
 
 	.hero > * {
 		grid-column: 1 / -1 !important;
+	}
+
+	.hero :is(.logo, .content) {
+		padding-block: 2rem;
 	}
 
 	.hero .logo {
